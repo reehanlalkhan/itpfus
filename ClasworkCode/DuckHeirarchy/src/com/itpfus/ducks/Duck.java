@@ -5,6 +5,11 @@ public abstract class Duck {
 	private int age;
 	private float weight;
 	private String color;
+	private Flyable flyer;
+
+	public void setFlyable(Flyable flyer) {
+		this.flyer = flyer;
+	}
 
 	public int getAge() {
 		return age;
@@ -33,13 +38,17 @@ public abstract class Duck {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
+
+	public void fly() {
+		if (flyer != null) {
+			flyer.fly();
+		}
+	}
+
 	public void quack() {
 		System.out.println("Quack, quack!");
 	}
-	
-	public abstract void fly();
-	
+
 	public void display() {
 		System.out.println("A white colored duck");
 	}
